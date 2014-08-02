@@ -6,6 +6,7 @@ class Dependency implements Comparable<Dependency> {
   final String name;
   final VersionConstraint versionConstraint;
   final bool isDevDependency;
+  bool mostStrict = false;
 
   Dependency._(this.name, String versionConstraint, this.isDevDependency)
       : this.versionConstraint = new VersionConstraint.parse(versionConstraint);

@@ -122,7 +122,11 @@ class VizPackage extends Comparable {
         if (dep.isDevDependency) {
           edgeProps['style'] = 'dashed';
         } else if (onlyDev) {
-          edgeProps['color'] = 'gray';
+          edgeProps['style'] = 'dashed';
+        }
+
+        if (dep.mostStrict) {
+          edgeProps['color'] = 'red';
         }
 
         if (dep.name == rootName) {
